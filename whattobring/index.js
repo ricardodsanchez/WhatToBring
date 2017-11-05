@@ -1,8 +1,8 @@
 module.exports = function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    if (req.query.name || (req.body && req.body.name)) {
-        let city = req.query.name? eq.query.name : req.body.name
+    if (req.query.city || (req.body && req.body.city)) {
+        let city = req.query.city? eq.query.city : req.body.city
         let result;
         switch(city.toLowerCase) {
             case "austin":
@@ -25,7 +25,6 @@ module.exports = function (context, req) {
             // status: 200, /* Defaults to 200 */
             
             body: "Hey there, here are the things I suggest you bring with you to" + city + "\n" + result
-            
         };
     }
     else {
