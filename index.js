@@ -25,6 +25,7 @@ module.exports = function (context, req) {
             // status: 200, /* Defaults to 200 */
             
             body: "Hey there, here are the things I suggest you bring with you to" + city + "\n" + result
+            
         };
     }
     else {
