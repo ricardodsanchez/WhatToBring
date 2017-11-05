@@ -2,8 +2,14 @@ module.exports = function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
     if (req.query.city || (req.body && req.body.city)) {
-        let city = req.query.city? req.query.city : req.body.city
-        let result;
+        let city
+        let result
+        if(req.query.city){
+            city = req.query.city
+        } else {
+            city = req.body.city
+        }
+
         switch(city.toLowerCase) {
             case "austin":
                 result = "Clothing: Jeans, shorts, t-shirts. Shoes: Boots, sandals, and sneakers. Accessories: Sunglasses, sunscreen"
@@ -24,7 +30,7 @@ module.exports = function (context, req) {
         context.res = {
             // status: 200, /* Defaults to 200 */
             
-            body: "Hey there, here are the things I suggest you bring with you to" + city + "\n" + result
+            body: "Hey there, here are the things I suggest you bring with you to " + city + "\n" + result
         };
     }
     else {
