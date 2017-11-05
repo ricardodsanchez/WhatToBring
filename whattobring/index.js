@@ -2,7 +2,7 @@ module.exports = function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
     if (req.query.city || (req.body && req.body.city)) {
-        let city = req.query.city? eq.query.city : req.body.city
+        let city = req.query.city? req.query.city : req.body.city
         let result;
         switch(city.toLowerCase) {
             case "austin":
@@ -30,7 +30,7 @@ module.exports = function (context, req) {
     else {
         context.res = {
             status: 400,
-            body: "Please pass a name on the query string or in the request body"
+            body: "Please pass a city on the query string or in the request body"
         };
     }
     context.done();
