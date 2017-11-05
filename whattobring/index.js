@@ -10,7 +10,7 @@ module.exports = function (context, req) {
             city = req.body.city
         }
 
-        switch(city.toLowerCase) {
+        switch(city.toLowerCase()) {
             case "austin":
                 result = "Clothing: Jeans, shorts, t-shirts. Shoes: Boots, sandals, and sneakers. Accessories: Sunglasses, sunscreen"
                 break;
